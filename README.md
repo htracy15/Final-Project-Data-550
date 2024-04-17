@@ -1,9 +1,3 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # Introduction
 
 This Github repo contains code and data for creating a PDF report that
