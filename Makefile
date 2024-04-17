@@ -24,15 +24,19 @@ PROJECTFILES = report.Rmd code/01_clean_data.R code/02_descriptive_table.R code/
 RENVFILES = renv.lock renv/activate.R renv/settings.json .Rprofile
 
 # rule to build image
+.PHONY: project_image
 project_image: Dockerfile $(PROJECTFILES) $(RENVFILES)
 	docker build -t data550fin .
 	touch $@
 	
+.PHONY: pull_image
 pull_image:
 	docker pull htracy15/data550fin
 	
+.PHONY: macdocker
 macdocker:
 	docker run -v "$$(pwd)/report":/project/report htracy15/data550fin
-	
+
+.PHONY: pcdocker
 pcdocker: 
 	docker run -v "/$$(pwd)/report":/project/report htracy15/data550fin
