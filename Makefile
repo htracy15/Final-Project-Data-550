@@ -34,5 +34,5 @@ pull_image:
 macdocker:
 	docker run -v "$$(pwd)/report":/project/report htracy15/data550fin
 	
-pcdocker:
-  docker run -v "/$$(pwd)/report":/project/report htracy15/data550fin
+pcdocker: 
+	docker run -v "/$$(pwd)/report":/project/report htracy15/data550fin
